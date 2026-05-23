@@ -1,6 +1,7 @@
 # FuseFM 2026 Workshop Website
 
-Static GitHub Pages site for the NeurIPS 2026 Workshop on FuseFM.
+Static GitHub Pages site for the proposed NeurIPS 2026 Workshop on FuseFM:
+Model Fusion for Collaborative Foundation Model Development.
 
 ## Local Preview
 
@@ -21,5 +22,11 @@ python3 -m http.server 8080
 The site will be available at:
 
 ```text
-https://<username>.github.io/fusefm-2026-workshop/
+https://egangu.github.io/model-fusion-workshop/
 ```
+
+## Assets
+
+- `assets/hero-fusion.png` is a generated visual created for this site.
+- Organizer profile thumbnails are derived from public PolyU and Zhejiang
+  University profile pages.

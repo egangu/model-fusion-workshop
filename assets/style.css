@@ -4,6 +4,7 @@
   --line: #d9e0df;
   --paper: #fbfbf8;
   --panel: #ffffff;
+  --panel-soft: #f3f7f4;
   --teal: #0f766e;
   --deep: #102028;
   --coral: #d95f4f;
@@ -21,6 +22,11 @@ body {
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-size: 17px;
   line-height: 1.65;
+}
+
+::selection {
+  color: white;
+  background: var(--teal);
 }
 
 a {
@@ -48,12 +54,16 @@ a:hover {
 
 .page-header {
   position: relative;
-  min-height: 520px;
+  min-height: 560px;
   padding: 56px 24px 40px;
   color: white;
   background:
     linear-gradient(90deg, rgba(8, 18, 24, .88), rgba(8, 18, 24, .38) 58%, rgba(8, 18, 24, .1)),
     url("hero-fusion.png") center / cover no-repeat;
+}
+
+.page-header.compact {
+  min-height: 430px;
 }
 
 .header-inner,
@@ -76,7 +86,7 @@ a:hover {
   max-width: 880px;
   margin: 0;
   font-family: "Source Serif 4", Georgia, serif;
-  font-size: clamp(2.25rem, 6vw, 4.75rem);
+  font-size: clamp(2.25rem, 5.5vw, 4.65rem);
   line-height: 1.02;
   font-weight: 760;
 }
@@ -128,6 +138,12 @@ a:hover {
   padding: 34px 24px 72px;
 }
 
+.intro {
+  max-width: 860px;
+  color: #263538;
+  font-size: 1.08rem;
+}
+
 .info-table {
   width: 100%;
   border-collapse: collapse;
@@ -168,6 +184,14 @@ h2 {
   font-size: 1.38rem;
 }
 
+.section-kicker {
+  margin: 0 0 8px;
+  color: var(--gold);
+  font-size: .82rem;
+  font-weight: 760;
+  text-transform: uppercase;
+}
+
 p {
   margin: 0 0 16px;
 }
@@ -182,7 +206,9 @@ li {
 
 .topic-grid,
 .people-grid,
-.speaker-list {
+.speaker-list,
+.pc-grid,
+.stat-grid {
   display: grid;
   gap: 14px;
   margin: 22px 0 34px;
@@ -197,21 +223,64 @@ li {
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
 }
 
+.pc-grid {
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+}
+
+.stat-grid {
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+}
+
 .topic,
 .person,
-.speaker {
+.speaker,
+.pc-member,
+.stat {
   padding: 16px 17px;
   background: var(--panel);
   border: 1px solid var(--line);
   border-radius: 6px;
 }
 
+.stat {
+  border-top: 3px solid var(--teal);
+}
+
+.stat strong {
+  display: block;
+  margin-bottom: 2px;
+  color: var(--deep);
+  font-size: 1.35rem;
+  line-height: 1.2;
+}
+
 .topic strong,
 .person strong,
-.speaker strong {
+.speaker strong,
+.pc-member strong {
   display: block;
   color: var(--deep);
   line-height: 1.3;
+}
+
+.person {
+  display: grid;
+  grid-template-columns: 86px 1fr;
+  gap: 15px;
+  align-items: start;
+}
+
+.person-photo {
+  width: 86px;
+  height: 86px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #e5ece9;
+  background: var(--panel-soft);
+}
+
+.person.no-photo {
+  grid-template-columns: 1fr;
 }
 
 .meta {
@@ -227,6 +296,20 @@ li {
   font-weight: 740;
 }
 
+.label {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  margin: 6px 6px 0 0;
+  padding: 2px 8px;
+  color: var(--deep);
+  background: var(--panel-soft);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: .78rem;
+  font-weight: 650;
+}
+
 .note {
   padding: 14px 16px;
   margin: 22px 0;
@@ -234,11 +317,46 @@ li {
   background: #fff5ee;
 }
 
+.timeline {
+  display: grid;
+  gap: 10px;
+  margin: 22px 0 34px;
+}
+
+.slot {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 16px;
+  padding: 15px 16px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--teal);
+  border-radius: 5px;
+}
+
+.slot time {
+  color: var(--deep);
+  font-weight: 760;
+}
+
+.slot p {
+  margin: 0;
+}
+
+.subtle {
+  color: var(--muted);
+  font-size: .94rem;
+}
+
 .site-footer {
   padding: 26px 24px 42px;
   color: var(--muted);
   border-top: 1px solid var(--line);
   font-size: .92rem;
+}
+
+.site-footer p {
+  margin: 0 0 7px;
 }
 
 @media (max-width: 720px) {
@@ -249,6 +367,10 @@ li {
   .page-header {
     min-height: 500px;
     padding-top: 40px;
+  }
+
+  .page-header.compact {
+    min-height: 420px;
   }
 
   .info-table,
@@ -272,5 +394,19 @@ li {
   .header-caption {
     position: static;
     margin: 34px 0 0;
+  }
+
+  .slot {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
+  .person {
+    grid-template-columns: 72px 1fr;
+  }
+
+  .person-photo {
+    width: 72px;
+    height: 72px;
   }
 }
