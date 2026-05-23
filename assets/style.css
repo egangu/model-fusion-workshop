@@ -206,9 +206,7 @@ li {
 
 .topic-grid,
 .people-grid,
-.speaker-list,
-.pc-grid,
-.stat-grid {
+.speaker-list {
   display: grid;
   gap: 14px;
   margin: 22px 0 34px;
@@ -227,41 +225,18 @@ li {
   grid-template-columns: 1fr;
 }
 
-.pc-grid {
-  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-}
-
-.stat-grid {
-  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-}
-
 .topic,
 .person,
-.speaker,
-.pc-member,
-.stat {
+.speaker {
   padding: 16px 17px;
   background: var(--panel);
   border: 1px solid var(--line);
   border-radius: 6px;
 }
 
-.stat {
-  border-top: 3px solid var(--teal);
-}
-
-.stat strong {
-  display: block;
-  margin-bottom: 2px;
-  color: var(--deep);
-  font-size: 1.35rem;
-  line-height: 1.2;
-}
-
 .topic strong,
 .person strong,
-.speaker strong,
-.pc-member strong {
+.speaker strong {
   display: block;
   color: var(--deep);
   line-height: 1.3;
