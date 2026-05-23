@@ -28,5 +28,5 @@ https://egangu.github.io/model-fusion-workshop/
 ## Assets
 
 - `assets/hero-fusion.png` is a generated visual created for this site.
-- Organizer profile thumbnails are derived from public PolyU and Zhejiang
-  University profile pages.
+- Organizer profile thumbnails are derived from the public PolyU team page and
+  Fei Wu's Google Scholar profile.
