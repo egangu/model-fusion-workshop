@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="FuseFM icon">
+  <defs>
+    <linearGradient id="bg" x1="8" y1="8" x2="56" y2="56" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#102028"/>
+      <stop offset="1" stop-color="#0f766e"/>
+    </linearGradient>
+    <linearGradient id="core" x1="20" y1="16" x2="46" y2="48" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f0c57a"/>
+      <stop offset="1" stop-color="#d95f4f"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="15" fill="url(#bg)"/>
+  <circle cx="18" cy="18" r="4" fill="#f7efe1" opacity="0.9"/>
+  <circle cx="18" cy="46" r="4" fill="#f7efe1" opacity="0.9"/>
+  <circle cx="48" cy="18" r="4" fill="#f7efe1" opacity="0.9"/>
+  <path d="M21.5 20.5 31 28M21.5 43.5 31 36M44.5 20.5 36 28" fill="none" stroke="#f7efe1" stroke-width="3" stroke-linecap="round" opacity="0.72"/>
+  <path d="M28 17h20v8H37v7h9v8h-9v11h-9z" fill="url(#core)"/>
+  <circle cx="33" cy="32" r="8" fill="#f7efe1" opacity="0.14"/>
+</svg>
